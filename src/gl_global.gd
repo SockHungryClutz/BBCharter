@@ -21,7 +21,7 @@ var beat_length_msec: float
 
 # Editor Settings
 var note_culling_bounds: Vector2 = Vector2(0, 1920)
-var snapping_ratios = [1,2,4,8]
+var snapping_ratios = [1,2,3,4,6,8]
 var snapping_factor = 2
 var snapping_allowed = true
 var project_loaded = false
