@@ -106,7 +106,7 @@ func _input(event):
 			else:
 				if get_viewport().get_mouse_position().y > 872:
 					# Seeking
-					inc_scale = (Global.song_beats_per_second / 8) if !event.alt_pressed else 0.005
+					inc_scale = (Global.song_beats_per_second / 16) if !event.alt_pressed else 0.005
 					if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 						clamp_seek(inc_scale)
 					if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
