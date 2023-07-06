@@ -27,7 +27,7 @@ func _on_chart_loaded():
 # Create the indicators / Seperators in the timeline
 func create_ui():
 	print('Generating New Timeline Indicators')
-	for i in Global.song_beats_total:
+	for i in Global.song_beats_total + 1:
 		var new_beat_indicator = Prefabs.beat_indicator.instantiate()
 		$Indicators.add_child(new_beat_indicator)
 		new_beat_indicator.setup(i, Enums.UI_INDICATOR_TYPE.BEAT)
@@ -52,6 +52,7 @@ func create_ui():
 	
 	for i in Global.song_beats_total * 6:
 		if i % 3 == 0: continue
+		if i % 2 == 0: continue
 		var new_beat_indicator = Prefabs.beat_indicator.instantiate()
 		$Indicators.add_child(new_beat_indicator)
 		new_beat_indicator.setup(i, Enums.UI_INDICATOR_TYPE.SIXTH_BEAT)

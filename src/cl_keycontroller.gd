@@ -39,7 +39,7 @@ func spawn_single_keyframe(keyframe_data, prefab: PackedScene, parent: Node):
 # Create the indicators / Seperators in the timeline
 func create_ui():
 	print('Generating More Timeline Indicators')
-	for i in Global.song_beats_total:
+	for i in Global.song_beats_total + 1:
 		var new_key_indicator = Prefabs.key_indicator.instantiate()
 		$Indicators.add_child(new_key_indicator)
 		new_key_indicator.setup(i, Enums.UI_INDICATOR_TYPE.BEAT)
@@ -64,6 +64,7 @@ func create_ui():
 	
 	for i in Global.song_beats_total * 6:
 		if i % 3 == 0: continue
+		if i % 2 == 0: continue
 		var new_key_indicator = Prefabs.key_indicator.instantiate()
 		$Indicators.add_child(new_key_indicator)
 		new_key_indicator.setup(i, Enums.UI_INDICATOR_TYPE.SIXTH_BEAT)
